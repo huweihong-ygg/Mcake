@@ -1,0 +1,184 @@
+body{
+    font-family: 'Microsoft YaHei','微软雅黑','黑体','SimHei';
+}
+@media screen and (min-width: 1200px){
+    .container {
+        max-width: 100%;
+    }
+    }
+    .navigation-bar-bottom {
+        margin-left: 121px;
+        text-align: center;
+    }
+      .pr-7{
+          padding-right: 10rem;
+      }
+    
+      @media screen and (max-width:1000px) {
+         .disnone{
+              display:none !important;
+          }
+      } 
+    @media screen and (max-width:767px) {
+      .disnone_sm{
+        display: none !important;
+      }
+    }    
+      .disable::before{
+        content: "";
+        display: table;
+      }
+      .disableafter::after{
+        content: "";
+        display: table;
+      }
+
+
+.h7{
+  font-size: 13px;
+  color: #fff;
+}
+.h7_gray{
+    font-size: 13px;    
+}
+.h8 li{
+    font-size:14px;
+    line-height:32px;
+    color: #666;
+}
+.mr_auto{
+    margin:0 auto !important;
+}
+.footer_box{
+    background: #f2f6f7;
+}
+
+.w-80{
+    width: 80%;
+}
+.height_530{
+    height: 530px;
+}
+.h8 li a:hover {
+    color: #fff;
+    padding:3px 6px;
+    border-radius: 15px;
+    background: rgba(243, 39, 39, 0.842);
+    text-decoration: none;
+  }
+.my_color{
+ background: #b0916a;
+
+}
+.my_font_color{
+    color: #b0916a;
+}
+a:hover{
+    text-decoration: none;
+ 
+}
+.outline{
+    outline: 0 !important;
+    border: 0 !important;
+}
+.btn:focus, .btn.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(176, 145, 106, 0.918);
+  }
+
+.vip-box li+li{
+    margin-top: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

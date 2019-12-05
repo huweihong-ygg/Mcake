@@ -1,0 +1,141 @@
+body{ padding:0; margin:0;font-family:'Microsoft YaHei','微软雅黑','黑体','SimHei';color: #767676;}
+ul,li{padding:0; margin:0; list-style:none;}
+a{text-decoration:none; color: #767676;}
+.banner-bg{
+    background: url(login-bg.jpg) no-repeat;
+    margin: 0 auto;
+    min-height: 500px;
+    height: 700px;
+    background-size: 100%;
+  }  
+ .login{
+     width: 960px;
+     height: 500px;
+     background-color:#fff;
+     text-align: center;
+     margin:50px auto ;
+     min-height:auto;
+     border-radius: 8px;
+ }
+ .login-box{
+
+   border-right: #dddddd 1px solid;
+   padding: 40px 70px 60px 88px;
+   width: 559px;
+   min-height: 500px;
+   float: left;
+ }
+ .login-box>ul>li>input{
+     width: 405px;
+     height: 55px;
+     font-size: 18px;
+     box-sizing: border-box;
+     border:0;
+     border-bottom :#cdcdcd 1px solid;
+     padding: 10px;
+     margin-top: 2rem;
+     outline: none;
+  
+ }
+ .login-box>ul>li>input:focus{
+     border-bottom: #000;
+ }
+ .login-box>ul>li>a{
+     float: right;
+     text-decoration:none;
+ }
+ .login-box>ul>li>button{
+     width: 402px;
+     height: 54px;
+ }
+ .login-box>ul>li{
+   position: relative;
+ }
+ .login-box>ul>li>span{
+  position: absolute;
+  top: 48px;
+  right: 0px;
+ }
+
+ /* .disnone,.vail_success,.vail_fail 为js 操作class */
+ .disnone{
+     display: none;
+ }
+.vail_success,.vail_fail{
+    font-weight: bold;
+	font-size: 15px;
+}
+.vail_success{
+    color: green;   
+}
+.vail_fail{
+   color:#f40;  
+}
+/* 《————————————————————》 */
+.h1-login{
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+.zhanghao-login{
+    color: #000;
+}
+.wangji{
+    margin:10px 0px 50px;
+}
+#uname,#upwd{
+    border: none;
+    border-bottom: 1px #767676 solid;
+    
+}
+input:focus{
+    background: #eee;
+}
+
+.btn{
+   border: none;
+   
+} 
+.others-login{
+    width: 400px;
+    height: 500px;
+    float: left;
+    text-align: center;
+    font-size: 13px;
+   }
+   .others-login>h5{
+       margin-top:100px;
+       margin-bottom:80px; 
+   }
+.zfb{
+   background-image: url(icon-zfb.png); 
+}
+.wb{
+    background-image: url(icon-wb-on.png);
+}
+.zfb,.wb{
+    display: inline-block;
+    margin: 0 15px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
+.have-id{
+    margin-top: 4rem;
+}
+#reger{
+    display: block;
+    /* background: #b0916a; */
+    border-radius: 15px;
+    color: #fff;
+    text-decoration: none;
+    width: 90px;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 20px auto;
+    outline: none;
+    border:0;
+    /* transition: 1s; */
+}
+/* #reger:hover{
+    background: #756551;
+} */

@@ -1,0 +1,41 @@
+@media screen and (min-width: 1200px){
+    .container {
+        max-width: 100%;
+    }
+    }
+    .navigation-bar-bottom {
+        margin-left: 121px;
+        text-align: center;
+    }
+      .pr-7{
+          padding-right: 10rem;
+      }
+    
+      @media screen and (max-width:1000px) {
+         .disnone{
+              display:none !important;
+          }
+      } 
+    @media screen and (max-width:767px) {
+      .disnone_sm{
+        display: none !important;
+      }
+    }    
+      .disable::before{
+        content: "";
+        display: table;
+      }
+      .disableafter::after{
+        content: "";
+        display: table;
+      }
+
+      .act_list{
+          width: 1200px;
+          margin:0 auto !important;
+      }
+    .liji{
+        width: 140px;
+        height: 40px;
+        border-radius: 25px;
+    }  

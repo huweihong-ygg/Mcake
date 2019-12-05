@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/bank.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <div class="container px-0">
+
+        <!-- 导航栏部分 -->
+<div id="app">
+<header v-html="msg">
+</header>
+</div>
+<!-- 导航栏结束 -->
+<div class="mainer">
+  <div class="userbox">
+    <!-- 标题 -->
+      <div class="usertitle">
+          <p>
+             <h1 class="gowulogo"></h1> 
+            <span>购物车</span>
+          </p>
+      </div>
+      <!-- 购物路径 -->
+  <div class="or_list">  
+      <ul class="buy_flow">
+        <li><p>我的购物车</p></li>
+        <li><span>></span></li>
+        <li><p>填写订单信息</p></li>
+        <li><span>></span></li>
+        <li><p>完成订单</p></li>
+      </ul>
+  </div>
+  <!-- 购物商品 -->
+  <ul class="view_list"  id="app2"  @click="change">
+    <li class="cur_box">
+       <ul class="buy_Cart">
+          <li>商品信息</li>
+          <li>规格</li>
+          <li>单价（元）</li>
+          <li>数量</li>
+          <li>金额</li>
+          <li>操作</li>
+       </ul>
+       <ul>
+         <li class="buy_car_list">
+           <table >
+             <tbody>
+                <tr class="tr_box">
+                    <td class="pro_one">
+                    <div class="bgimg">
+                      <div class="into" data-index=0 :class="{active : actives[0]}"></div>
+                    </div>
+                    </td>
+                      <td class="pro_two">
+                      <div class="two_left">
+                      <a href="./product_detail.html">
+                      <img src="../shooping.img/1(9).jpg" alt="">
+                      </a>
+                      </div>
+                      <div class="two_right">
+                      <a href="">
+                      <b>Fraise-Chantilly</b>
+                      </a>
+                      鲜莓印雪 
+                      <br>
+                      赠品：标配餐具10份  生日蜡烛1支
+                      </div>
+                      </td>
+                    <td class="pro_three">
+                    <p>2磅（908g）</p>
+                    <samp>4-7人食</samp>
+                    </td>
+                        <td class="pro_four">
+                        <div>￥298.00</div>
+                        </td>
+                        <td class="pro_five">
+                        <div data-lid=0 >
+                        <span style="cursor: pointer;" >-</span>
+                        <span  style="width: 20%;height: 20px;padding-left: 5px;border: 0;outline: 0; background: #f2f6f7;" >{{ns[0]}}</span>
+                        <span style="cursor: pointer;">+</span>
+                        </div>
+                        </td>
+                        <td style="width: 100px;">
+                        <div>￥{{ns[0]*298}}.00</div>
+                        </td>
+                    <td style="width:100px">
+                    <div>删除</div>
+                    </td>
+               </tr>
+               <tr class="tr_box">
+                   <td class="pro_one">
+                    <div class="bgimg">
+                      <div class="into" data-index=1 :class="{active : actives[1]}"></div>
+                    </div>
+                  </td>
+                    <td class="pro_two">
+                    <div class="two_left">
+                    <a href="./product_detail.html">
+                    <img src="../shooping.img/1(13).jpg" alt="">
+                    </a>
+                    </div>
+                    <div class="two_right">
+                    <a href="">
+                    <b>Joséphine</b>
+                    </a>
+                    约瑟芬玫瑰  
+                    <br>
+                    赠品：标配餐具（两盘两勺）1套
+                    </div>
+                    </td>
+                    <td class="pro_three">
+                    <p>约2磅（908g）</p>
+                    <samp>4-7人食</samp>
+                    </td>
+                    <td class="pro_four">
+                    <div>￥398.00</div>
+                    </td>
+                    <td class="pro_five">
+                    <div data-lid=1>
+                    <span  style="cursor: pointer;">-</span>
+                    <span  style="width: 20%;height: 20px;padding-left: 5px;border: 0;outline: 0; background: #f2f6f7;" v-text="ns[1]"></span>
+                    <span style="cursor: pointer;">+</span>
+                    </div>
+                    </td>
+                    <td style="width: 100px;">
+                    <div>￥{{ns[1]*398}}.00</div>
+                    </td>
+                    <td style="width:100px">
+                    <div>删除</div>
+                    </td>
+              </tr>
+               <tr class="tr_box">
+                    <td class="pro_one">
+                      <div class="bgimg">
+                        <div class="into" data-index=2 :class="{active : actives[2]}"></div>
+                      </div>
+                    </td>
+                    <td class="pro_two">
+                    <div class="two_left">
+                    <a href="./product_detail.html">
+                    <img src="../shooping.img/1(14).jpg" alt="">
+                    </a>
+                    </div>
+                    <div class="two_right">
+                    <a href="">
+                    <b>Le MOJITO</b>
+                    </a>
+                    Mojito 柠·漾   
+                    <br>
+                    赠品：标配餐具10份  生日蜡烛1支
+                    </div>
+                    </td>
+                    <td class="pro_three">
+                    <p>约2磅（908g）</p>
+                    <samp>4-7人食</samp>
+                    </td>
+                    <td class="pro_four">
+                    <div>￥298.00</div>
+                    </td>
+                    <td class="pro_five">
+                    <div data-lid=2>
+                    <span>-</span>
+                    <span  style="width: 20%;height: 20px;padding-left: 5px;border: 0;outline: 0; background: #f2f6f7;" v-text="ns[2]"></span>
+                    <span>+</span>
+                    </div>
+                    </td>
+                    <td style="width: 100px;">
+                    <div>￥{{ns[2]*298}}.00</div>
+                    </td>
+                    <td style="width:100px">
+                    <div>删除</div>
+                    </td>
+               </tr>
+              <tr class="tr_box">
+                        <td class="pro_one">
+                          <div class="bgimg">
+                            <div class="into" data-index=3 :class="{active : actives[3]}"></div>
+                          </div>
+                        </td>
+                        <td class="pro_two">
+                        <div class="two_left">
+                        <a href="./product_detail.html">
+                        <img src="../shooping.img/1(10).jpg" alt="">
+                        </a>
+                        </div>
+                        <div class="two_right">
+                        <a href="">
+                        <b>Nino</b>
+                        </a>
+                        尼诺   
+                        <br>
+                        赠品：标配餐具10份  生日蜡烛1支
+                        </div>
+                        </td>
+                        <td class="pro_three">
+                        <p>约2磅（908g）</p>
+                        <samp>4-7人食</samp>
+                        </td>
+                        <td class="pro_four">
+                        <div>￥198.00</div>
+                        </td>
+                        <td class="pro_five">
+                        <div  data-lid=3>
+                        <span>-</span>
+                        <span  style="width: 20%;height: 20px;padding-left: 5px;border: 0;outline: 0; background: #f2f6f7;" v-text="ns[3]"></span>
+                        <span>+</span>
+                        </div>
+                        </td>
+                        <td style="width: 100px;">
+                        <div>￥{{ns[3]*198}}.00</div>
+                        </td>
+                        <td style="width:100px">
+                        <div>删除</div>
+                        </td>
+               </tr>
+               <tr class="last_tr">
+                 <td class="allin">
+                    <div class="bgimg" @click="allset">
+                       <div class="into lastbg" :class="active"></div>
+                      </div>
+                </td>
+                <td class="allset">
+                  全选
+                </td>
+                                   
+               </tr>
+             </tbody>
+           </table>
+         </li>
+       </ul>
+    </li>
+    <li class="huangou">
+      <div class="huanbox">
+        <p>商品换购</p>
+        <div class="huantwo">
+             <div class="item_gou item_left">
+               <div><img src="../shooping.img/1(43).jpg" alt=""></div>
+               <div>
+                 <p>知识小生</p>
+                 <p class="huanpri">￥18.80 <span>￥28.80</span></p>
+                 <p class="jia"><img src="../shooping.img/h-g.png" alt=""></p>
+               </div>
+             </div>
+             <div class="item_gou">
+                <div><img src="../shooping.img/1(50).jpg" alt=""></div>
+                <div>
+                  <p>缤纷欢乐礼包</p>
+                  <p class="huanpri">￥29.90 <span>￥38.80</span></p>
+                  <p class="jia"><img src="../shooping.img/h-g.png" alt=""></p>
+                </div>
+             </div>
+        </div> 
+      </div>   
+    </li>
+    <li>
+      <div class="jieshuan">
+        <div class="little">已选<span>{{ns[0]+ns[1]+ns[2]+ns[3]}}</span>件商品，商品合计：<span>￥{{ns[2]*298+ns[1]*398+ns[0]*298+ns[3]*198}}:00</span></div>
+        <div class="price">
+          <span class="butt">继续购物</span>
+          <span class="butt">结算</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+  </div>
+</div>
+
+
+
+
+
+<!-- footer部分 -->
+<div class="footer_box">
+ 
+      <div class="footer-wallbox row mx-0 w-md-100 px-0 mr_auto">
+        <div class="col-lg-5 col-md-12 px-0">
+        <div class="m_copy">
+          <p class="icp_no">客服热线：4006-678-678（8:00 - 22:00）</p>
+          <p>客服邮箱：cs@mcake.com</p>
+        </div>
+      </div>
+        <div class="col-lg-7 col-md-12 px-0">
+        <div class="foot_nav">
+           <div class="discover">
+             <h4 class="discover-ico">发现</h4>
+             <p>公告</p>
+             <p class="wb-wb"></p>
+             <p class="wx-wx"></p>
+           </div>
+           <dl class="footer-dl">
+             <dt>关于我们</dt>
+             <dd>企业介绍</dd>
+             <dd>媒体合作</dd>
+             <dd>招贤纳士</dd>
+             <dd>呼叫中心</dd>
+           </dl>
+           <dl class="footer-dl">
+             <dt>帮助中心</dt>
+             <dd>投诉与建议</dd>
+             <dd>会员权益</dd>
+             <dd>购物指南</dd>
+             <dd>支付类</dd>
+             <dd>订单相关</dd>
+             <dd>配送服务</dd>
+           </dl>
+        </div>
+      </div>
+     
+     
+    
+  
+    
+    <div class="copyright col-lg-12 px-0 fs-12 mt-5">
+ 
+         <div class="row mx-0 ">
+           <div class="col-lg-4 col-md-6 col-sm-12 px-0">
+             <p class="longleft">上海卡法电子商务有限公司</p>
+             <p class="long">地址：上海市普陀区同普路1130弄3号楼</p>
+             <p>电话：021-52691591</p>
+             <p>社会信用代码：913101070678091460</p>
+             <p>食品经营许可证：JY13101070034251</p>
+             <p>食品生产许可证：SC12431010700121</p>
+           </div>
+           <div class="col-lg-4 col-md-6 col-sm-12 px-0">
+            <p class="longleft">上海卡法电子商务有限公司</p>
+            <p class="long">地址：上海市普陀区同普路1130弄3号楼</p>
+            <p>电话：021-52691591</p>
+            <p>社会信用代码：913101070678091460</p>
+            <p>食品经营许可证：JY13101070034251</p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 px-0">
+            <p class="longleft">上海卡法电子商务有限公司</p>
+            <p class="long">地址：上海市普陀区同普路1130弄3号楼</p>
+            <p>电话：021-52691591</p>
+            <p>社会信用代码：913101070678091460</p>
+            <p>食品经营许可证：JY13101070034251</p>
+          </div>
+         
+         </div>
+      
+       <div class="text-center w-100">Copyright © 2012-2019 上海卡法电子商务有限公司 版权所有
+        </div>
+    </div>
+    </div>
+
+
+</div>
+
+</div>
+
+<script src="../user.js/header.js"></script> 
+
+
+</body>
+<script>
+  new Vue({
+   el:"#app2",
+   data:{
+     bool:false,
+     active:'',
+     ns:[1,2,3,4],
+     actives : [false,false,false,false]
+    },
+   methods: {
+    allset(){
+      if(this.bool==false){
+      for(var i=0;i<this.actives.length;i++){
+        this.actives.splice(i,1,true)
+        this.active='active'
+        this.bool=true;            
+      }
+    }else{
+      for(var i=0;i<this.actives.length;i++){
+        this.actives.splice(i,1,false)
+        this.active=''
+        this.bool=false;            
+      }
+    }
+
+    },
+     doit(i,p){
+       this.ns.splice(i,1,this.ns[i]+p);
+      //  console.log("hello")
+      //  console.log(this.ns[i])
+       this.ns[i]<0&&(this.ns[i]=0)
+     },
+     change(e){
+      if(e.target.classList[0] == "into"){//当前元素的class类数组对象中的第一个class为into
+          for(var i = 0; i < this.actives.length; i++){
+            if(i == e.target.dataset.index){
+              if(this.actives[i] == true){
+                this.actives.splice(i,1,false);
+                this.active='';
+              }else{
+                this.actives.splice(i,1,true);
+                 if(this.actives[0]&&this.actives[1]&&this.actives[2]&&this.actives[3]){
+                   this.active="active"
+                 }
+              }
+            }
+          }  
+        }
+ 
+    if(e.target.innerHTML=="-"){
+       var list=e.target.parentNode.dataset.lid;
+       console.log(list)
+       this.doit(list,-1)
+    }
+    if(e.target.innerHTML=="+"){
+       var list=e.target.parentNode.dataset.lid;
+       console.log(list)
+       this.doit(list,+1)
+    }  
+     }
+   },
+  })
+  </script>
+</html>

@@ -1,0 +1,115 @@
+
+body{ padding:0; margin:0;font-family:'Microsoft YaHei','微软雅黑','黑体','SimHei';color: #767676;}
+ul,li,h1,input{padding:0; margin:0; list-style:none;}
+a{text-decoration:none; color: #767676;}
+.fs-12{
+  font-size: 12px;
+}
+p{
+  margin-bottom: 0rem;
+}
+dt{
+  font-weight:bold;
+}
+dd{
+  margin-bottom: .5rem;
+  margin-left: 0;
+}
+.footer{
+    width: 100%;
+    height: auto;
+    background: #f2f6f7;
+  }
+  
+  .footer-wallbox{
+   width: 1040px;
+   margin:0 auto !important;
+   padding: 40px 0 20px 0;
+   background: #f2f6f7;
+  
+  
+  }
+  .m_copy{
+   width: 320px;
+   margin-left: 10px;
+   color: #767676;
+   float: left;
+  }
+  .icp_no{
+    color:#b0916a;
+  }
+  
+  .foot_nav{
+    width: 585px;
+    height: 168px;
+    float: left;
+    text-align: center;
+    margin-left: 40px;
+    border-left: 1px solid #bbb;
+  }
+  
+  .discover{
+    width: 194px;
+   height: 100px;
+   float: left;
+  }
+  .discover-ico{
+    color: #b0916a;
+  }
+  .wb-wb,.wx-wx{
+    width: 30px;
+    height:30px;
+    float: left;
+   margin-left: 15px;
+  }
+  .wb-wb{
+    background-image: url(../moneypic/wb.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-left: 60px;
+  }
+  .wx-wx{
+    background-image: url(../moneypic/wx.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  
+  .footer-dl{
+    color: #767676;
+   width: 194px;
+   float: left;
+  }
+  .footer-dl>dd{
+    font-size: 12px;
+    transition: 0.5s;
+  }
+  .footer-dl>dd:hover{
+    color: #b0916a;
+    cursor: pointer;
+  }
+  .copyright {
+    margin-top: 50px;;
+    width: 100%;
+   color: #767676;
+   background-color: #f2f6f7;
+  }
+  .copy-right{
+    width: 870px;
+    padding: 10px 0;
+    margin: 0 auto;
+    font-size: 12px;
+  }
+  .long{
+    width: 320px;
+  }
+  .longleft{
+    width: 300px;
+  }
+  .last-copy{
+    background-color: #f2f6f7;
+    padding-top: 2rem;
+    text-align: center;
+  }
+  .footer_box {
+    background-color: #f2f6f7;
+}

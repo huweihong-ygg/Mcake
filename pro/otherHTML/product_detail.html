@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/product_detail.css">
+    <link rel="stylesheet" href="../css/footer.css">
+  
+    <style>
+        @media screen and (min-width: 1200px){
+.container {
+    max-width: 100%;
+}
+}
+.navigation-bar-bottom {
+    margin-left: 121px;
+    text-align: center;
+}
+  .pr-7{
+      padding-right: 10rem;
+  }
+
+  @media screen and (max-width:1000px) {
+     .disnone{
+          display:none !important;
+      }
+  } 
+@media screen and (max-width:767px) {
+  .disnone_sm{
+    display: none !important;
+  }
+}    
+  .disable::before{
+    content: "";
+    display: table;
+  }
+  .disableafter::after{
+    content: "";
+    display: table;
+  }
+    </style>
+
+
+</head>
+<body>
+<!-- 头部header     -->
+
+<div id="app">
+<header v-html="msg">
+</header>
+</div>
+
+
+<!-- 主体 -->
+<div class="container px-0 mt-5">
+ <div class="product_box row mx-0 mr_auto ">
+<div class="col-lg-6 col-md-12 px-0 product_height " id="apps">
+ <div class="row mx-0" @click="moved">
+  <div class="col-2 px-0" >
+    <div class="text-center"> ^ </div>
+    <!-- 小图片  -->
+    <div class="my-1"><img src="../product-img/1.jpg" 
+      data-target=0  class="my_border min"> </div>
+    <div class="my-1"><img src="../product-img/2.jpg" 
+      data-target=1  class="my_border min"> </div>
+    <div class="my-1"><img src="../product-img/3.jpg" 
+      data-target=2  class="my_border min"> </div>
+   
+  </div>
+  <!-- zhong图 -->
+  <div class="col-10 px-0 pl-2" style="position: relative;">
+    <img :src="mdimg[i]"  class="max" style="width: 100%;" >
+    <div class="h7_dark">
+        <p>
+            Soleil après les chutes de neige, prenant une profonde inspiration, se sentir la douceur de la crème. Les rouges、mûres fraises，comme les elfes, tombant sur la terre.
+        </p>
+        <p>
+            雪过天晴后的每一口呼吸，甜蜜清新得不落俗套，鲜红的草莓，如俏皮的精灵降落凡间。
+        </p>
+      </div>
+      <!-- 鼠标移入的遮罩层 -->
+      <div class="moved" v-show="show" :style="maskStyle">
+           
+      </div>
+      <!-- 遮罩层上的div防止触电效果 -->
+      <div class="super_move" @mouseover="display" @mouseout="display" @mousemove="move">
+
+      </div>
+      <!-- 显示大图片 -->
+      <div class="bgimg" :style="{background: `url(${imgs[i]})`,'background-position':`${-parseInt(maskStyle.left)*2}px ${-parseInt(maskStyle.top)*2}px`}" v-show="show">
+
+      </div>
+  </div>
+ </div>
+
+ 
+
+</div>
+<!-- 右边 -->
+<div class="col-lg-6 col-md-12 px-0 product_height_right pl-3" style="position: relative;">
+
+    <div class="pro_name">
+        <span>Fraise-Chantilly</span> 
+        鲜莓印雪
+      </div>
+      <div class="pro_pire">
+        ￥<span data-num="num" data-value="198">198.00</span>
+      </div>
+<ul class="nav nav-pills mt-2 " data-toggle="king">
+    <li class="nav-item "><a data-toggle="pill" class="h7 nav-link active" href="#tab5" data-value="198">1磅(454g)</a></li>
+    <li class="nav-item "><a data-toggle="pill" class="h7 nav-link " href="#tab6" data-value="237.6">2磅(908g)</a></li>
+    <li class="nav-item "><a data-toggle="pill" class="h7 nav-link" href="#tab7" data-value="356.4">3磅(1.36kg)</a></li>
+    <li class="nav-item "><a data-toggle="pill" class="h7 nav-link" href="#tab8" data-value="594">5磅(2.27kg)</a></li>
+</ul> 
+  
+    <div class="tab-content h7_dark">
+        <div id="tab5" class="tab-pane active">2-3人食 约19cm*7.0cm <br> 提前5小时预定 
+          <br> 
+         <span class="text-danger">若不及时食用，请放置0-10℃冷藏</span>
+        </div>
+        <div id="tab6" class="tab-pane ">4-7人食 约19cm*7.0cm <br> 提前5小时预定
+          <br> 
+          <span class="text-danger">若不及时食用，请放置0-10℃冷藏</span>
+        </div>
+        <div id="tab7" class="tab-pane">8-12人食 约24cm*7.0cm <br> 提前5小时预定
+          <br> 
+          <span class="text-danger">若不及时食用，请放置0-10℃冷藏</span>
+        </div>
+        <div id="tab8" class="tab-pane">12-20人食 约29cm*7.0cm <br> 提前5小时预定
+          <br> 
+          <span class="text-danger">若不及时食用，请放置0-10℃冷藏</span>
+        </div>
+    </div> 
+
+      <div class="cake_num h7_dark mt-3" data-up="sub">
+        <span>数量</span>
+        <button>-</button>
+       <span class="px-2">1</span>
+        <button>+</button>
+      </div>
+      <div class="add_content mt-4">
+        <div class="add_top mb-4">
+          <div class="add_top_left">
+            <span class="h7">换购</span>
+            <input type="checkbox" class="float-left"></input>
+            <p class="h7_dark float-left">
+              <span class="text-danger  font-weight-bold">+40.8</span>
+              元换购知识小生（100克）
+            </p>
+          </div>
+          <div class="add_top_r float-right">
+            <img src="../product-img/1 (2).jpg" alt="">
+          </div>
+        </div>
+        <div class="add_top">
+            <div class="add_top_left">
+              <span class="h7">换购</span>
+              <input type="checkbox" class="float-left"></input>
+              <p class="h7_dark float-left">
+                <span class="text-danger  font-weight-bold">+40.8</span>
+                元换购缤纷欢乐礼包<br> 包含帽子1套（共5个），<br>插旗1套，  防水包装袋1个
+              </p>
+            </div>
+            <div class="add_top_r float-right">
+              <img src="../product-img/1 (3).jpg" alt="">
+            </div>
+          </div>
+      </div>
+
+
+      <div class="h7 beclear mb-5">
+        <button>加入购物车</button>
+        <button>立即购买</button>
+      </div>
+      <ul class="Select_view">
+          <li class="cur"><span>Best Ingredient</span>
+            <p>优质原材料</p></li>
+        <li><span>Evaluation</span>
+            <p id="comments_count">累计点评(604)</p></li>
+      </ul>
+
+<div class="Review_top mt-2">
+  <a href="" class="btn h7_dark p-0" >非常好吃<span>(466)</span></a>
+  <a href="" class="btn h7_dark p-0" >配送服务好<span>(466)</span></a>
+  <a href="" class="btn h7_dark p-0" >口感细腻<span>(466)</span></a>
+  <a href="" class="btn h7_dark p-0" >清甜可口<span>(466)</span></a>
+  <a href="" class="btn h7_dark p-0" >蛋糕很漂亮<span>(466)</span></a>
+</div>
+
+<!-- 评论区 -->
+<ul class="Review_list mt-3">
+  <li>
+    <p class="h7_dark mb-0 float-left">非常好吃的蛋糕哎</p>
+    <div class="h7_dark float-left">
+      <span class="level4"></span>
+      <span>会员</span>
+      <span>189****8769</span>
+      <br>
+      <small>2019-09-21 06:13:09</small>
+    </div>
+  </li>
+
+  <li>
+      <p class="h7_dark mb-0 float-left">垃圾蛋糕，难吃死了</p>
+      <div class="h7_dark float-left">
+        <span class="level4"></span>
+        <span>会员</span>
+        <span>189****8769</span>
+        <br>
+        <small>2019-09-21 06:13:09</small>
+      </div>
+    </li>
+
+    <li>
+        <p class="h7_dark mb-0 float-left">非常好吃的蛋糕哎</p>
+        <div class="h7_dark float-left">
+          <span class="level4"></span>
+          <span>会员</span>
+          <span>189****8769</span>
+          <br>
+          <small>2019-09-21 06:13:09</small>
+        </div>
+      </li>
+</ul>
+</div>
+
+
+</div>
+
+<div class="Details_box">
+  <!-- 设计师 -->
+  <div class="center_sjs">
+    <h1>
+    <img src="../product-img/sjs.png" alt="">
+   </h1> 
+   <span>
+     
+    Faire une promenade dans le jardin après la première neige, prendre une bouchée de fraises fraîches, moelleuse crème Cointreau, c'est le goût de Paris en hiver.
+    <br>
+    
+初雪过后漫步在杜乐丽花园的小道上，刚刚摘下的新鲜草莓在口中化开，轻呡回味，却是君度奶油的丰盈，就是冬天巴黎的味道。
+	
+   </span>
+  </div> 
+  <div class="Details">
+    <img src="../product-img/pc.jpg" alt="">
+  </div>
+</div>
+
+
+
+<div class="title">
+    <div class="title-center">
+        <div class="bc-title"></div>
+        <p>蛋糕</p>
+    </div>
+  </div>
+<!-- 商品 -->
+<div class="listbox">
+    <!-- 蛋糕商品第一栏 -->
+    <ul class="listbox-w1">
+        <li class="bow-ww1">
+            <div>
+                <a href=""><img src="../shooping.img/1(1).jpg" alt=""></a> 
+                <div class="mask">
+                    <a href="#" target="_blank">
+                      &nbsp;&nbsp;&nbsp; <font>2磅 （908g）/ 298 RMB</font>
+                    </a>
+                    
+                    <p>&nbsp;&nbsp;&nbsp;甜度指数 : ♥ ♥</p>
+                     <div class="gouwulan"><a href=""><img src="../shooping.img/gouwulan.png" alt=""> </a></div>
+                </div>
+
+            </div>
+ 
+
+            <div class="pro_title">
+                 <img src="../shooping.img/xingping.png" alt="" width="30px" height="30px">
+                 <a href="">
+                     <span class="font-wei">Côte d'Azur</span>
+                     <span>海岸情调</span>
+                </a>   
+            </div>
+        </li>
+
+        <li class="bow-ww1">
+                <div>
+                        <a href=""><img src="../shooping.img/1(2).jpg" alt=""></a> 
+                        <div class="mask">
+                            <a href="#" target="_blank">
+                              &nbsp;&nbsp;&nbsp; <font>2磅 （908g）/ 298 RMB</font>
+                            </a>
+                            
+                            <p>&nbsp;&nbsp;&nbsp;甜度指数 : ♥ ♥ ♥</p>
+                             <div class="gouwulan"><a href=""><img src="../shooping.img/gouwulan.png" alt=""> </a></div>
+                        </div>
+        
+                    </div>
+         
+        
+                    <div class="pro_title">
+                         <img src="../shooping.img/jingpai.png" alt="" width="30px" height="30px">
+                         <a href="">
+                             <span class="font-wei">Luke et dondon</span>
+                             <span>卢克和咚咚冰淇淋蛋糕</span>
+                        </a>   
+                    </div>
+        </li>
+
+        <li class="bow-ww1">
+                <div>
+                        <a href=""><img src="../shooping.img/1(3).jpg" alt=""></a> 
+                        <div class="mask">
+                            <a href="#" target="_blank">
+                              &nbsp;&nbsp;&nbsp; <font>2磅 （908g）/ 298 RMB</font>
+                            </a>
+                            
+                            <p>&nbsp;&nbsp;&nbsp;甜度指数 : ♥ ♥ ♥ ♥</p>
+                             <div class="gouwulan"><a href=""><img src="../shooping.img/gouwulan.png" alt=""> </a></div>
+                        </div>
+        
+                    </div>
+                    <div class="pro_title">
+                         <img src="../shooping.img/xingping.png" alt="" width="30px" height="30px">
+                         <a href="">
+                             <span class="font-wei">Choco ~ Mariage</span>
+                             <span>浓巧·迷情冰淇淋蛋糕</span>
+                        </a>   
+                    </div>
+        </li>
+        <li class="bow-ww1">
+                <div>
+                        <a href=""><img src="../shooping.img/1(4).jpg" alt=""></a> 
+                        <div class="mask">
+                            <a href="#" target="_blank">
+                              &nbsp;&nbsp;&nbsp; <font>2磅 （908g）/ 298 RMB</font>
+                            </a>
+                            
+                            <p>&nbsp;&nbsp;&nbsp;甜度指数 : ♥</p>
+                             <div class="gouwulan"><a href=""><img src="../shooping.img/gouwulan.png" alt=""> </a></div>
+                        </div>
+        
+                    </div>
+                    <div class="pro_title">
+                         <img src="../shooping.img/renqi.png" alt="" width="30px" height="30px">
+                         <a href="">
+                             <span class="font-wei">Liliane ~ Gâteau glacée</span>
+                             <span>恋恋·草莓冰淇淋蛋糕</span>
+                        </a>   
+                    </div>
+        </li>
+        <li class="bow-ww1">
+                <div>
+                        <a href=""><img src="../shooping.img/1(5).jpg" alt=""></a> 
+                        <div class="mask">
+                            <a href="#" target="_blank">
+                              &nbsp;&nbsp;&nbsp; <font>2磅 （908g）/ 298 RMB</font>
+                            </a>
+                            
+                            <p>&nbsp;&nbsp;&nbsp;甜度指数 : ♥ ♥</p>
+                             <div class="gouwulan"><a href=""><img src="../shooping.img/gouwulan.png" alt=""> </a></div>
+                        </div>
+        
+                    </div>
+                    <div class="pro_title">
+                         <img src="../shooping.img/renqi.png" alt="" width="30px" height="30px">
+                         <a href="">
+                             <span class="font-wei">Floraison</span>
+                             <span>花漾·年华</span>
+                        </a>   
+                    </div>
+        </li>
+    </ul>
+</div>
+
+
+</div>
+
+<!-- footer部分 -->
+<div class="footer_box">
+ 
+    <div class="footer-wallbox row mx-0 w-md-100 px-0 mr_auto">
+      <div class="col-lg-5 col-md-12 px-0">
+      <div class="m_copy">
+        <p class="icp_no">客服热线：4006-678-678（8:00 - 22:00）</p>
+        <p>客服邮箱：cs@mcake.com</p>
+      </div>
+    </div>
+      <div class="col-lg-7 col-md-12 px-0">
+      <div class="foot_nav">
+         <div class="discover">
+           <h4 class="discover-ico">发现</h4>
+           <p>公告</p>
+           <p class="wb-wb"></p>
+           <p class="wx-wx"></p>
+         </div>
+         <dl class="footer-dl">
+           <dt>关于我们</dt>
+           <dd>企业介绍</dd>
+           <dd>媒体合作</dd>
+           <dd>招贤纳士</dd>
+           <dd>呼叫中心</dd>
+         </dl>
+         <dl class="footer-dl">
+           <dt>帮助中心</dt>
+           <dd>投诉与建议</dd>
+           <dd>会员权益</dd>
+           <dd>购物指南</dd>
+           <dd>支付类</dd>
+           <dd>订单相关</dd>
+           <dd>配送服务</dd>
+         </dl>
+      </div>
+    </div>
+   
+   
+  
+  
+  
+  <div class="copyright col-lg-12 px-0 fs-12 mt-5">
+  
+       <div class="row mx-0 ">
+         <div class="col-lg-4 col-md-6 col-sm-12 px-0">
+           <p class="longleft">上海卡法电子商务有限公司</p>
+           <p class="long">地址：上海市普陀区同普路1130弄3号楼</p>
+           <p>电话：021-52691591</p>
+           <p>社会信用代码：913101070678091460</p>
+           <p>食品经营许可证：JY13101070034251</p>
+           <p>食品生产许可证：SC12431010700121</p>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12 px-0">
+          <p class="longleft">上海卡法电子商务有限公司</p>
+          <p class="long">地址：上海市普陀区同普路1130弄3号楼</p>
+          <p>电话：021-52691591</p>
+          <p>社会信用代码：913101070678091460</p>
+          <p>食品经营许可证：JY13101070034251</p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 px-0">
+          <p class="longleft">上海卡法电子商务有限公司</p>
+          <p class="long">地址：上海市普陀区同普路1130弄3号楼</p>
+          <p>电话：021-52691591</p>
+          <p>社会信用代码：913101070678091460</p>
+          <p>食品经营许可证：JY13101070034251</p>
+        </div>
+       
+       </div>
+    
+     <div class="text-center w-100">Copyright © 2012-2019 上海卡法电子商务有限公司 版权所有
+      </div>
+  </div>
+  </div>
+</div>
+  </div>
+ <!-- 商品js动态  -->
+ <script src="../js/jquery.min.js"></script>
+ <script src="../js/popper.min.js"></script>
+ <script src="../js/bootstrap.min.js"></script>
+ <script src="../js/product_detail.js"></script>
+ <script src="../js/vue.js"></script>
+<script src="../user.js/header.js"></script>
+<script>
+  new Vue({
+   el:"#apps",
+   data:{
+     i:0,
+    mdimg:[
+    "../product-img/1 (1).jpg",
+    "../product-img/d2.png",
+    "../product-img/d3.png"],  
+   show:false,//标记遮罩层和lgimg 的显示
+   imgs:[
+   "../product-img/1.lg.jpg",
+     "../product-img/3.lg.jpg",
+     "../product-img/3.lg.jpg",
+   ],
+   maskStyle:{
+     left:0,
+     top:0
+   }
+   },
+   methods:{
+     move(e){
+       var left=e.offsetX-75; 
+       left<0&&(left=0)
+       left>342&&(left=342)
+       left=left+"px"
+       var top=e.offsetY-75; 
+       top<0&&(top=0)
+       top>342&&(top=342)
+       top=top+"px"
+       this.maskStyle={ left,top}
+     },
+     display(){
+       this.show=!this.show;
+     },
+    moved(e){
+       if(e.target.classList[0] == "my_border"){
+         var index=e.target.dataset.target;
+             this.i=index;
+       }
+    },
+   }
+  
+
+  })
+</script> 
+</body>
+</html>

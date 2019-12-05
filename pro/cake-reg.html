@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录-MCAKE</title>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="reg.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="user.js/config.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="user.js/reg.js"></script>
+    <!-- <script src="js/ajax.js"></script> -->
+    <link rel="stylesheet" href="./css/footer.css">
+ 
+</head>
+<body>  
+        <div class="navigation-bar">
+                <div class="logo-box">
+                    <img src="logo.png" alt="">
+                </div>
+               <div class="navigation-bar-top">
+                   
+                  <div class="wallbox-wallcenter">
+                       <!-- /* 这是购物车那一栏 */ -->
+                      <div class="wallbox-walltop">
+   
+                          <div class="shopping-box">
+                               <!-- 购物车盒子 -->
+                                  <ul>
+                                      <li><a href="">
+                                          <img src="shopping.png" alt="" class="gowuche">
+                                          购物车
+                                       </a></li>
+                                      <li><a href="http://127.0.0.1:8080/login.html">登录</a></li>
+                                      <li><a href="cake-reg.html">注册</a></li>
+                                  </ul>
+                            
+
+                          </div>
+                      </div>
+                      <div class="wallbox-wallbottom">
+                       <!-- 四个导航栏模块  -->
+                          <div class="navigation-bar-bottom">
+                             <ul>
+                                 <li class="underline"><a href="CAKE.html">Nos Produits<br>
+                                               <span> 全部产品</span>
+                                               </a>  
+                                               </li>
+                                 <li class="border1">
+                                     <a href="./otherHTML/napoleon.html">Napoléon<br>
+                                 <span>拿破仑系列</span> 
+                                    </a>
+                                </li>
+                                 <li class="border2">
+                                    <a href="">Événements<br>
+                                 <span>热门活动</span> 
+                                   </a>
+                               </li>
+                                 <li>
+                                       <a href="">Mon M'CAKE<br>
+                                    <span>会员中心</span>  
+                                      </a>
+                               </li>
+                             </ul>
+                             <div class="phone">
+                                <div class="phone-box">
+                                    <div> 
+                                        <img src="电话.png" alt=""> 
+                                        <span><a href="#">4006-123-099</a> </span>
+                                    </div>
+                                    <div>
+                                           <img src="laba.png" alt=""> 
+                                           <span class="pei"><a href="#">配送范围查询</a></span>
+                                 </div>
+                                </div>
+                                <!-- 地标 -->
+                              <div class="sites">
+                                   <ul class="site">
+                                       <li>
+                                       <img src="地址.png" alt="">
+                                           <a href="">上海市 </a>  
+                                       </li>
+                                   </ul>                               
+                               </div>            
+                             </div>
+                          </div>                
+                      </div>
+                  </div>        
+               </div>
+            </div>
+  
+
+
+<div class="banner-bg">
+<table></table>
+<div class="reg">
+<div class="reg-box">     
+  <ul class="reg-ul">
+      <li>
+          <h1>会员注册</h1>
+      </li>
+      <li>
+        <input placeholder="请输入用户名" type="text" id="uname" onblur="namedrop()" onfocus="nameget()"> <span id="uname_span"></span>
+
+      </li>
+      <li>
+      <input placeholder="请输入密码" type="text" id="upwd" onblur="mimadrop()" onfocus="mimaget()"><span id="uname_upwd"></span>
+      </li>
+      <li>
+        <input placeholder="请确认密码" type="text" id="cpwd" onblur="cpwddrop()" onfocus="cpwdget()"> <span id="cpwd_span"></span>	
+
+      </li>
+      <li>
+      <input placeholder="请输入邮箱地址" type="text" id="email" onfocus="emailget()" onblur="emaildrop()">
+      <span id="email_sapn"></span>
+
+      </li>
+      <li>
+      <input placeholder="请输入11位手机号" type="text" id="phone"  onblur="phonedrop()" onfocus="phoneget()"> <span id="phone_sapn"></span><br>
+      </li>
+
+      <li>
+      <input placeholder="您的真实姓名" type="text" id="user_name" onfocus="u_nameget()" onblur="u_namedrop()"><br>	
+      <span id="u_name_sapn"></span>
+      </li>
+      <li>
+        
+        <input type="checkbox" id="xieyi">同意《M'cake购物协议》
+        <span>   
+        <input type="radio" id="man" name="gender" checked>男
+        <input type="radio" id="woman" name="gender">女
+      </span>
+      </li>
+
+      <li>
+        <button type="button" class="btn btn-info" onclick="getdata()">注册</button>
+      </li>
+  </ul>      
+</div>
+ <div class="others-login">
+  <h5>其他登录方式</h5>
+  <div>
+   <a href=""><span onclick="authorize('alipay');" class="zfb on"></span></a> 
+    <a href=""><span onclick="authorize('weibo');" class="wb"></span></a>
+  </div>
+  <p class="have-id">还没有账号?</p>
+  <div>  <button id="reger">立即注册</button> </div>
+</div>
+
+
+</div>
+</div>   
+<!-- footer部分 -->
+
+<div class="footer_box">
+ 
+    <div class="footer-wallbox row mx-0 w-md-100 px-0 mr_auto">
+      <div class="col-lg-5 col-md-12 px-0">
+      <div class="m_copy">
+        <p class="icp_no">客服热线：4006-678-678（8:00 - 22:00）</p>
+        <p>客服邮箱：cs@mcake.com</p>
+      </div>
+    </div>
+      <div class="col-lg-7 col-md-12 px-0">
+      <div class="foot_nav">
+         <div class="discover">
+           <h4 class="discover-ico">发现</h4>
+           <p>公告</p>
+           <p class="wb-wb"></p>
+           <p class="wx-wx"></p>
+         </div>
+         <dl class="footer-dl">
+           <dt>关于我们</dt>
+           <dd>企业介绍</dd>
+           <dd>媒体合作</dd>
+           <dd>招贤纳士</dd>
+           <dd>呼叫中心</dd>
+         </dl>
+         <dl class="footer-dl">
+           <dt>帮助中心</dt>
+           <dd>投诉与建议</dd>
+           <dd>会员权益</dd>
+           <dd>购物指南</dd>
+           <dd>支付类</dd>
+           <dd>订单相关</dd>
+           <dd>配送服务</dd>
+         </dl>
+      </div>
+    </div>
+   
+   
+  
+  
+  
+  <div class="copyright col-lg-12 px-0 fs-12 mt-5">
+  
+       <div class="row mx-0 ">
+         <div class="col-lg-4 col-md-6 col-sm-12 px-0">
+           <p class="longleft">上海卡法电子商务有限公司</p>
+           <p class="long">地址：上海市普陀区同普路1130弄3号楼</p>
+           <p>电话：021-52691591</p>
+           <p>社会信用代码：913101070678091460</p>
+           <p>食品经营许可证：JY13101070034251</p>
+           <p>食品生产许可证：SC12431010700121</p>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12 px-0">
+          <p class="longleft">上海卡法电子商务有限公司</p>
+          <p class="long">地址：上海市普陀区同普路1130弄3号楼</p>
+          <p>电话：021-52691591</p>
+          <p>社会信用代码：913101070678091460</p>
+          <p>食品经营许可证：JY13101070034251</p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 px-0">
+          <p class="longleft">上海卡法电子商务有限公司</p>
+          <p class="long">地址：上海市普陀区同普路1130弄3号楼</p>
+          <p>电话：021-52691591</p>
+          <p>社会信用代码：913101070678091460</p>
+          <p>食品经营许可证：JY13101070034251</p>
+        </div>
+       
+       </div>
+    
+     <div class="text-center w-100">Copyright © 2012-2019 上海卡法电子商务有限公司 版权所有
+      </div>
+  </div>
+  </div>
+  
+  
+</div>
+
+
+    
+</body>
+</html>

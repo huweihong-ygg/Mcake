@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-1.11.3.js"></script>
+    <style>
+      body{
+        font-family: 'Microsoft YaHei','微软雅黑','黑体','SimHei';
+      }
+      *{
+        margin: 0;padding: 0;
+        list-style: none;
+      }
+     #ti{
+            width: 100px;
+            height: 50px;
+            background: #678;
+            cursor: pointer;
+        }
+     #motai{
+         position: fixed;
+         /* display: none; */
+         top: 0;
+        width: 100%;
+        height:8000px;
+        background:rgba(0,0,0,0.6); 
+        z-index: 9999;
+     }
+     .motai::before{
+         content: '';
+         display:table;
+     }
+     .inter{
+       position: relative;
+         width: 330px;
+         height: 350px;
+         background: #f2f6f7;
+         margin: 200px auto;
+         position: relative;
+         padding-top: 15px;
+     }
+     .ins{
+       width: 94%;
+       height: 90%;
+       margin: auto;
+     }
+     #close{
+         width: 20px;height: 20px;
+         position: absolute;
+         cursor: pointer;
+         top: 0;
+         right:0px;
+         color: #b0916a;
+     }
+     .m_t {
+      font-size: 10px;
+     }
+     .m_t2{
+       font-size: 15px;
+       padding-bottom: 10px;
+       border-bottom: 1px solid #b0916a;
+     }
+     .change_u{
+       width: 100%;
+       height: 40px;
+       display: flex;
+       flex: wrap;
+       justify-content: space-between;
+       margin: 10px 0 15px;
+
+     }
+     .change_u li{
+       text-align: center;
+       width: 77px;
+       height: 40px;
+     
+     }
+     .active_img{
+      background: url(./banner-img/oks.png) no-repeat;
+       background-position: 22px -279px 
+     }
+    .Explain_list{
+      margin: 0 0 0 30px;
+    }
+    .Explain_list li{
+    margin: 9pt 0;
+    padding-left: 1pc;
+    background: url(./banner-img/icon1.png) no-repeat;
+    background-position: -285px -102px;
+    font-size: 9pt;
+}
+.cake_num{
+  overflow: hidden;
+  margin: 30px 0 0 30px;
+  padding-bottom: 20px
+}
+.cake_num dl,span{
+  float: left;
+  font-size: 15px;
+}
+.cake_num dd {
+    float: left;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+  background: url(./banner-img/icon1.png) -7px -282px #fff;
+}
+.cake_num dt {
+    float: left;
+    width: 35px;
+    height: 25px;
+}
+
+.cake_num input{
+    margin-top: 2px;
+    width: 35px;
+    height: 20px;
+    border: none;
+    background: 0 0;
+    color: #b0916a;
+    text-align: center
+}
+.cake_num dd.n_right{
+  float: left;
+  background-position: -67px -253px;
+}
+.buy_btn input{
+  width: 47%;
+  padding: 7px 10px;
+    border: none;
+    border-radius: 2px;
+    background: #b0916a;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.buy_btn input:first-child{
+  margin-left: 8px;
+}
+    </style>
+</head>
+<body>
+  <div id="ti">
+      你点我试试
+  </div>
+
+    <div id="motai">
+        <div class="inter">
+         <div class="ins">
+         <p class="m_t">
+          Sélectionnez la commande le nombre de livres：
+         </p>
+         <p class="m_t2">
+            选择您要订购的磅数：
+         </p>
+         <ul class="change_u" id="chan">
+           <li class="active_img">1磅 (454g)</li>
+           <li>2磅 (908g)</li>
+           <li>3磅(1.36kg)</li>
+           <li>5磅(2.27kg)</li>
+         </ul>
+          <ul class="Explain_list">
+            <li>提前5小时预定</li>
+            <li>4-7人食</li>
+            <li>约19cm*7.0cm</li>
+          </ul>
+          <!-- 数量 -->
+           <div class="cake_num">
+             <span>数量</span>
+              <dl>
+                <dd class="n_left"></dd>
+                <dt> <input type="text" value="1"></dt>
+                <dd class="n_right"></dd>
+              </dl>
+             
+           </div>
+           <div class="buy_btn">
+             <input type="button" value="加入购物车">
+             <input type="button" value="立即购买">
+           </div>
+            <div id="close">
+                ×
+            </div>
+          </div>
+        </div>
+    </div>
+    <script>
+  var dw=document.getElementById("ti")
+      dw.onclick=function(){
+        motai.style.display="block"
+      }
+ var bt=document.getElementById("close")
+     bt.onclick=function(){
+       console.log("1")
+       motai.style.display="none"
+     }
+    $("#chan").click(function(e){
+      var $li=$(e.target);
+      if($li.hasClass("active_img")){
+         $li.removeClass("active_img")
+      } else{
+        if($li.siblings().hasClass("active_img")){
+          $li.siblings().removeClass("active_img");
+        }
+        $li.addClass("active_img")
+      }
+
+    })
+  // document.getElementById("chan")
+  // .onclick=function(e){
+  //   var li=e.target
+  //   if(li.className=="active_img"){
+       
+  //   }else{
+  //     console.log(false)
+  //   }
+  // }
+    
+     
+         
+   
+       
+         
+      
+    </script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    /* #main{
+      width:100%;
+      margin:0 auto;
+    } */
+    #banner{
+      width:100%;
+      overflow:hidden;
+      position:relative;
+    }
+    #ul-imgs{
+      list-style:none;
+    }
+    #ul-imgs.transition{
+      transition:all .5s linear;
+    }
+    #ul-imgs>li{
+      width:14.28%;
+      float:left;
+    }
+    #ul-imgs img{
+      width:100%;
+    }
+    #ul-idxs{
+      width:150px;
+      margin:0 auto;
+      list-style:none;
+      position:absolute;
+      bottom:25px;
+      left:50%;
+      margin-left:-50px;
+    }
+    #ul-idxs>li{
+      float:left;
+      width:10px; height:10px;
+      background-color:#fff;
+      border-radius:5px;
+      margin:0 5px;
+      cursor:pointer;
+      margin-top: 7px;
+    }
+    #ul-idxs>li.active{
+      background-color:blue;
+    }
+    #btn-left,#btn-right{
+      width: 40px;
+      height: 30px;
+     
+      position:absolute;
+      top:50%;
+      background-repeat:no-repeat;
+      background-position:center;
+      cursor:pointer;
+    }
+    #btn-left{
+      left:20px;
+      background-image:url(./banner-img/arrows.png);
+      background-position: 11px 0px ;
+    }
+    #btn-right{
+      right:20px;
+      background-image:url(./banner-img/arrows.png);
+      background-position: 11px -30px ;
+    }
+  
+    .tab {
+	position:absolute;
+	bottom:3px;
+	left:48%;
+	margin-left:-89px;
+	height:23px;
+	padding-left:14px;
+	background:rgba(0,0,0,.2);
+	border-radius:15px;
+	transition:0.5s;
+}
+.tab:hover {
+	background:rgba(0,0,0,.5);
+	transform:scale(1.2);
+}
+.tab li {
+	width:13px;
+	height:13px;
+	float:left;
+	background:#fff;
+	border-radius:50%;
+	margin:5px 10px 0 0;
+	/*opacity:0.35;
+	*/
+	cursor:pointer;
+}
+
+  </style>
+</head>
+<body>
+  <main id="main"> 
+    <div id="banner">
+      <div id="btn-left"></div>
+      <ul id="ul-imgs" style=" margin-left:0px;">
+        <li><a href="javascript:;"><img src="./banner-img/memb-10.png"></a></li>
+        <li><a href="javascript:;"><img src="./banner-img/jianhang-85.jpg"></a></li>
+        <li><a href="javascript:;"><img src="./banner-img/ningyang.jpg"></a></li>
+        <li><a href="javascript:;"><img src="./banner-img/banner3.png"></a></li>
+        <-注意！最后li个数要比实际图片张数多1，最后一个li里的img是重复第一张li的图片-->
+        <!-- <li><a href="javascript:;"><img src="./banner-img/mid-autumn-festival-2.png"></a></li>
+        <li><a href="javascript:;"><img src="./banner-img/mid-autumn-festival-2.png"></a></li>
+        <li><a href="javascript:;"><img src="./banner-img/mid-autumn-festival-2.png"></a></li>
+      </ul>
+      <ul id="ul-idxs" class="tab">
+        虽然li个数比实际图片张数多1，但小圆点的个数不必多1-->
+        <!-- <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div id="btn-right"></div>
+    </div>
+  </main>
+  <script>
+
+    var i=0;
+    var LIWIDTH=parseInt(window.innerWidth);
+    var DURATION=500;
+    var LICOUNT=6;
+    var ulImgs=document.getElementById("ul-imgs");
+        ulImgs.style.width=LIWIDTH*(LICOUNT+1)+"px"
+    var ulIdxs=document.getElementById("ul-idxs");
+    var lis=ulIdxs.children;
+    function moveTo(to){
+      if(to==undefined){
+        to=i+1;
+      }
+      if(i==0){
+        if(to>i){
+          ulImgs.className="transition";
+        }else{
+          ulImgs.className="";
+          ulImgs.style.marginLeft=-LIWIDTH*LICOUNT+"px";
+          setTimeout(function(){
+            moveTo(LICOUNT-1);
+          },100);
+          return;
+        }
+      }
+      i=to;
+      ulImgs.style.marginLeft=-i*LIWIDTH+"px";
+      for(var li of lis){
+        li.className=""
+      }
+      console.log(i);
+      if(i==LICOUNT){
+        i=0;
+        setTimeout(function(){
+          ulImgs.className="";
+          ulImgs.style.marginLeft=0;
+        },DURATION)
+      }
+      lis[i].className="active";
+    }
+
+
+
+    var btnLeft=document.getElementById("btn-left");
+    var btnRight=document.getElementById("btn-right");
+    var canClick=true;
+    btnRight.onclick=function(){
+      move(1)
+    }
+    function move(n){
+      if(canClick){
+        console.log(i+n);
+        moveTo(i+n);
+        canClick=false;  
+        setTimeout(function(){
+          canClick=true;
+        },DURATION+100);
+      }
+    }
+    btnLeft.onclick=function(){
+      move(-1);
+    }
+
+
+    var interval=3000;
+    var timer=setInterval(function(){
+      moveTo()
+    },3000);
+    var banner=document.getElementById("banner");
+    banner.onmouseover=function(){
+      clearInterval(timer);
+    }
+    banner.onmouseout=function(){
+      timer=setInterval(function(){
+        moveTo()
+      },3000);
+    }
+
+
+    var ulIdxs=document.getElementById("ul-idxs");
+    var canClick=true;
+    ulIdxs.onclick=function(e){
+      if(canClick){
+        var li=e.target;
+        if(li.nodeName=="LI"){
+          if(li.className!=="active"){
+            for(var i=0;i<lis.length;i++){
+              if(lis[i]==li){
+                break;
+              }
+            }
+            moveTo(i);
+            setTimeout(function(){
+              canClick=true;
+            },DURATION);
+          }
+        }
+      }
+    }
+ 
+  </script>
+</body>
+</html> -->

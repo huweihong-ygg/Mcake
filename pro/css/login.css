@@ -1,0 +1,67 @@
+body{ padding:0; margin:0;font-family:'Microsoft YaHei','微软雅黑','黑体','SimHei';color: #767676;}
+ul,li{padding:0; margin:0; list-style:none;}
+a{text-decoration:none; color: #767676;}
+.banner-bg{
+    background: url(../banner-img/login-bg.jpg);
+    margin: 0 auto;
+    min-height: 500px;
+    background-size: 100%;
+  }  
+ .login{
+     width: 960px;
+     height: 500px;
+     background-color:#eaa;
+     text-align: center;
+     margin:50px auto ;
+     min-height:auto;
+     border-radius: 8px;
+ }
+ .login-box{
+
+   border-right: #dddddd 1px solid;
+   padding: 40px 70px 60px 88px;
+   width: 559px;
+   min-height: 500px;
+ }
+ .login-box>ul>li>input{
+     width: 405px;
+     height: 55px;
+     font-size: 18px;
+     outline: none;
+  
+ }
+ .login-box>ul>li>a{
+     float: right;
+     text-decoration:none;
+ }
+ .login-box>ul>li>button{
+     width: 402px;
+     height: 54px;
+ }
+ .login-box>ul>li{
+   position: relative;
+ }
+ .login-box>ul>li>span{
+  position: absolute;
+  top: 18px;
+  right: 0px;
+ }
+.h1-login{
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+.zhanghao-login{
+    color: #000;
+}
+.wangji{
+    margin:10px 0px 50px;
+}
+#uname,#upwd{
+    border: none;
+    border-bottom: 1px #767676 solid;
+    
+}
+.btn{
+   border: none;
+   
+} 
